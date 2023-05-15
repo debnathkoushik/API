@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Astronomy Picture Of The Day</title>
+</head>
+
+<body>
+    <div class="center">
+        <h1>NASA Astronomy Picture Of The Day</h1>
+        <h2 id="title">Milky Way over Egyptian Desert</h2>
+        <h3>Date: <span id="date"></span></h3>
+        <img id="APOD" src="" alt="Milky Way over Egyptian Desert" style="width: 660px;height:510px;">
+        <p id="explanation">
+
+            For ten years the stargazer dreamed of taking a picture like this. The dreamer knew that the White Desert
+            National Park
+            in Egypt's Western Desert is a picturesque place hosting numerous chalk formations sculpted into surreal
+            structures by a
+            sandy wind. The dreamer knew that the sky above could be impressively dark on a clear moonless night,
+            showing
+            highlights
+            such as the central band of our Milky Way Galaxy in impressive color and detail. So the dreamer invited an
+            even
+            more
+            experienced astrophotographer to spend three weeks together in the desert and plan the composite images that
+            needed to
+            be taken and processed to create the dream image. Over three days in mid-March, the base images were taken,
+            all
+            with the
+            same camera and from the same location. The impressive result is featured here, with the dreamer -- proudly
+            wearing a
+            traditional Bedouin galabyia -- pictured in the foreground.</p>
+    </div>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+    <script>
+        // var request = new XMLHttpRequest();
+        // var url = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+        // var apikey = "lKoDXeyDEDNzS1R9JoQN8kUcAI7vZYC9mkaIYMVh";
+        // var date = "2014-05-14";
+
+
+        console.log(document.getElementById("APOD").src);
+        //initialises the request object
+        // request.open("GET", url + "&date=" + date);
+        // request.open("GET", url + apikey);
+
+        //sends the request to the server
+        //request.send();
+
+        // console.log("request status: " + request.status + " and request readyState: " + request.readyState);
+
+
+        window.onload = () => {
+            var response = { "date": "2023-05-14", "explanation": "What would it be like to fly free in space?  At about 100 meters from the cargo bay of the space shuttle Challenger, Bruce McCandless II was living the dream -- floating farther out than anyone had ever been before.  Guided by a Manned Maneuvering Unit (MMU), astronaut McCandless, pictured, was floating free in space.   During Space Shuttle mission 41-B in 1984,  McCandless and fellow NASA astronaut Robert Stewart were the first to experience such an \"untethered space walk\". The MMU worked by shooting jets of nitrogen and was used to help deploy and retrieve satellites.  With a mass over 140 kilograms, an MMU is heavy on Earth, but, like everything, is weightless when drifting in orbit. The MMU was later replaced with the SAFER backpack propulsion unit.", "hdurl": "https://apod.nasa.gov/apod/image/2305/freeflyer_nasa_3000.jpg", "media_type": "image", "service_version": "v1", "title": "To Fly Free in Space", "url": "https://apod.nasa.gov/apod/image/2305/freeflyer_nasa_960.jpg" };
+            document.getElementById("APOD").src = response.hdurl;
+            document.getElementById("title").textContent = response.title;
+            document.getElementById("date").textContent = response.date;
+
+            document.getElementById("explanation").textContent = response.explanation;
+        };
+    </script>
+</body>
+
+</html>
